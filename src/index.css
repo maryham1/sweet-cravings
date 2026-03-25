@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@theme {
+  --breakpoint-tablet: 640px; /*sm*/
+  --breakpoint-laptop: 1024px; /*lg*/
+  --breakpoint-desktop: 1028px; /*xl*/
+  --breakpoint-mobile: 0px; /*default*/
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid brown;
+  border-top: 5px solid black;
+  border-right: none;
+  animation: spin 1s linear infinite;
+}
+
+@layer utilities {
+  .font-logo {
+    font-family: "Pacifico", cursive;
+  }
+  .font-poppins {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate((360deg));
+  }
+}
