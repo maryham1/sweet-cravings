@@ -26,7 +26,7 @@ function Login() {
           onChange={(e) => setName(e.target.value)}
           className="border border-pink-200 p-[10px] rounded-xl outline-none border-2 placeholder:text-gray-200/50"
         />
-        <button className="bg-pink-100 p-[10px] rounded-xl w-[100px] text-amber-950 text-lg">
+        <button className="bg-pink-100 p-[10px] rounded-xl w-[100px] text-amber-950 text-lg border ">
           Login
         </button>
       </form>
