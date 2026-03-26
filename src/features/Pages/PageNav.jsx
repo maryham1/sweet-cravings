@@ -6,7 +6,7 @@ import PageLink from "./PageLink";
 function PageNav() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="bg-red-100 px-[35px] py-[10px] sticky z-50 top-0  left-0 w-full flex justify-between items-center laptop:px-[1px] laptop:justify-around ">
+    <nav className="bg-red-100 px-[35px] py-[10px] sticky z-50 top-0  left-0 w-full flex justify-between items-center laptop:px-[1px] laptop:justify-around shadow shadow-lg rounded-b-3xl ">
       <Logo />
       <PageLink open={open} setOpen={setOpen} />
       <IconButton open={open} setOpen={setOpen} />

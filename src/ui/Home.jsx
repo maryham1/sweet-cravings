@@ -18,6 +18,7 @@ function Home() {
         >
           <source src="\video\dessert.mp4" />
         </video>
+        <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center gap-3 text-white h-full px-4">
           <h1 className="text-3xl font-poppins">
             Welcome to <span className="font-logo text-amber-950">Dessert</span>{" "}
@@ -32,8 +33,8 @@ function Home() {
         </div>
       </section>
       <About />
-      {/* <Testimonial />
-      <Contact /> */}
+      <Testimonial />
+      {/* <Contact /> */}
     </main>
   );
 }
