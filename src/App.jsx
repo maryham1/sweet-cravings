@@ -3,7 +3,7 @@ import Applayouts from "./ui/Applayouts";
 import Home from "./ui/Home";
 import Menu from "./features/menu/Menu";
 import { Loader as menuLoader } from "./features/menu/Menu";
-import Order from "./features/order/order";
+import Order from "./features/order/Order";
 import Login from "./features/Users/Login";
 import Cart from "./features/cart/Cart";
 
