@@ -8,7 +8,7 @@ function About() {
     <section
       id="about"
       ref={aboutRef}
-      className="px-[35px] laptop:px-[150px] py-[20px]  bg-red-50/50 scroll-mt-12 laptop:scroll-mt-20 "
+      className="px-[35px] laptop:px-[150px] py-[20px]  bg-red-50/50 scroll-mt-20 laptop:scroll-mt-20 "
     >
       <div className="flex flex-col gap-10 justify-between m-auto laptop:flex-row laptop:items-center laptop:gap-0">
         <img
