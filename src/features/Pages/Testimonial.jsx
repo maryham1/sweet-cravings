@@ -26,7 +26,7 @@ function Testimonial() {
     <section
       id="textimonial"
       ref={testmoniesRef}
-      className="px-[35px] laptop:px-[150px] py-[20px] flex flex-col gap-5 scroll-mt-20 "
+      className="px-[35px] laptop:px-[150px] py-[20px] flex flex-col gap-5 "
     >
       <h2 className="text-amber-950 capitalize font-logo text-center text-2xl">
         ...what our customers says...
