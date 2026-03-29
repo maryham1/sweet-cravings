@@ -6,6 +6,7 @@ import { Loader as menuLoader } from "./features/menu/Menu";
 import Order from "./features/order/Order";
 import Login from "./features/Users/Login";
 import Cart from "./features/cart/Cart";
+import { ScrollContextComponent } from "./context/ScrollContext";
 
 function App() {
   const router = createBrowserRouter([
@@ -37,7 +38,11 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <ScrollContextComponent>
+      <RouterProvider router={router} />;
+    </ScrollContextComponent>
+  );
 }
 
 export default App;

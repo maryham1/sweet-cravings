@@ -1,21 +1,58 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import LogoWhite from "../../ui/LogoWhite";
+import Logo from "../../ui/Logo";
+import { useComponent } from "../../context/ScrollContext";
 
 function PageLink({ open, setOpen }) {
+  const { aboutRef } = useComponent();
+  const { testmoniesRef } = useComponent();
+  const { contactRef } = useComponent();
   return (
     <ul
-      className={`${open ? "block" : "hidden"} absolute h-screen top-25 right-0 bg-black flex-col z-999 justify-between items-center w-[100px] text-amber-950 text-lg font-poppins laptop:flex laptop:bg-transparent laptop:relative laptop:h-0.5 laptop:top-0  laptop:flex-row laptop:w-[600px]`}
+      className={`${open ? "flex translate-x-0 " : " translate-x-full laptop:translate-x-0"} transform transition-transform duration-300 ease-in-out font-poppins absolute h-screen top-0 right-0 bg-pink-400 flex-col z-50   items-center w-full text-white text-2xl font-poppins py-[100px] gap-10 laptop:flex laptop:bg-transparent laptop:relative laptop:h-0.5 laptop:top-0  laptop:flex-row laptop:w-[600px] laptop:justify-between laptop:py-0 laptop:gap-0 laptop:text-xl laptop:text-amber-950`}
     >
+      <div className="flex items-center gap-0 top-5 absolute left-5 laptop:hidden">
+        <img src="\video\dessertLogo.svg" className="w-[40px] h-[40px]" />
+        <p className="font-logo text-xl text-amber-950">Sweet cravings</p>
+      </div>
       <li>
-        <a href="#about">About</a>
+        <a
+          href="#about"
+          onClick={(e) => {
+            e.preventDefault();
+            aboutRef.current.scrollIntoView({ behavior: "smooth" });
+            setOpen(false);
+          }}
+        >
+          About
+        </a>
+      </li>
+      <li onClick={() => setOpen(false)}>
+        <Link to="/login">Menu</Link>
       </li>
       <li>
-        <a href="#menu">Menu </a>
+        <a
+          href="#textimonial"
+          onClick={(e) => {
+            e.preventDefault();
+            testmoniesRef.current.scrollIntoView({ behavior: "smooth" });
+            setOpen(false);
+          }}
+        >
+          Testimonials{" "}
+        </a>
       </li>
       <li>
-        <a href="#textimonial">Testimonials </a>
-      </li>
-      <li>
-        <a href="#contact">contact </a>
+        <a
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            contactRef.current.scrollIntoView({ behavior: "smooth" });
+            setOpen(false);
+          }}
+        >
+          contact{" "}
+        </a>
       </li>
     </ul>
   );

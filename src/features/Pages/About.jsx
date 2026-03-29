@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useComponent } from "../../context/ScrollContext";
 
 function About() {
   const [show, setShow] = useState(false);
+  const { aboutRef } = useComponent();
   return (
     <section
       id="about"
-      className="px-[35px] laptop:px-[150px] py-[20px]  bg-red-50/50 "
+      ref={aboutRef}
+      className="px-[35px] laptop:px-[150px] py-[20px]  bg-red-50/50 scroll-mt-20 "
     >
       <div className="flex flex-col gap-10 justify-between m-auto laptop:flex-row laptop:items-center laptop:gap-0">
         <img

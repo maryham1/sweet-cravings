@@ -21,7 +21,7 @@ function Home() {
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center gap-3 text-white h-full px-4">
           <h1 className="text-3xl font-poppins">
-            Welcome to <span className="font-logo text-amber-950">Dessert</span>{" "}
+            Welcome to <span className="font-logo text-pink-600">Dessert</span>{" "}
             Heaven
           </h1>
           <p>Every bite is a little celebration of sweetness</p>
@@ -34,7 +34,7 @@ function Home() {
       </section>
       <About />
       <Testimonial />
-      {/* <Contact /> */}
+      <Contact />
     </main>
   );
 }
