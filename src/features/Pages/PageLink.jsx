@@ -9,11 +9,19 @@ function PageLink({ open, setOpen }) {
   const { contactRef } = useComponent();
   return (
     <ul
-      className={`${open ? "flex translate-x-0 " : " translate-x-full laptop:translate-x-0"} transform transition-transform duration-300 ease-in-out font-poppins absolute h-screen top-0 right-0 bg-pink-400 flex-col z-50   items-center w-full text-white text-2xl font-poppins py-[100px] gap-10 laptop:flex laptop:bg-transparent laptop:relative laptop:h-0.5 laptop:top-0  laptop:flex-row laptop:w-[600px] laptop:justify-between laptop:py-0 laptop:gap-0 laptop:text-xl laptop:text-amber-950`}
+      className={`${open ? "translate-x-0" : "translate-x-full"}
+  fixed top-0 right-0 h-screen w-full
+  transform transition-transform duration-300 ease-in-out
+  bg-pink-400 flex flex-col z-50 items-center
+  text-white text-2xl py-[100px] gap-10
+  laptop:relative laptop:translate-x-0 laptop:flex-row laptop:w-[600px] laptop:h-0
+  laptop:justify-between laptop:py-0 laptop:bg-transparent laptop:text-xl laptop:text-amber-950`}
     >
       <div className="flex items-center gap-0 top-5 absolute left-5 laptop:hidden">
         <img src="\video\dessertLogo.svg" className="w-[40px] h-[40px]" />
-        <p className="font-logo text-xl text-amber-950">Sweet cravings</p>
+        <p className="font-logo text-xl text-amber-950">
+          <Link to="/">Sweet cravings</Link>
+        </p>
       </div>
       <li>
         <a
