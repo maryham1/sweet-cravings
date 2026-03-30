@@ -1,13 +1,23 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useSearchParams } from "react-router-dom";
 
 function OrderSuccess() {
   const { orderId } = useParams();
+  const [searchParams] = useSearchParams();
+  const status = searchParams.get("status");
 
   return (
-    <div className="max-w-[300px] m-auto text-center mt-50 bg-white flex flex-col gap-5 items-center  p-10 rounded-xl shadow shadow-md laptop:max-w-xl laptop:mt-20">
-      <h1 className="text-lg font-bold text-green-600  font-poppins laptop:text-3xl">
+    <div className="max-w-[300px] m-auto text-center mt-50 bg-white flex flex-col gap-5 items-center p-10 rounded-xl shadow shadow-md laptop:max-w-xl laptop:mt-20">
+      {/* ✅ Email success message */}
+      {status === "success" && (
+        <div className="bg-green-100 text-green-700 px-4 py-2 rounded">
+          📩 Email sent successfully!
+        </div>
+      )}
+
+      <h1 className="text-lg font-bold text-green-600 font-poppins laptop:text-3xl">
         🎉 Order Successful!
       </h1>
+
       <div>
         <p>Your order ID:</p>
 

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { getTotalCartPrice, clearCart } from "../cart/CartSlice";
 import store from "../../store";
 import EmptyCart from "../cart/EmptyCart";
+import emailjs from "@emailjs/browser";
 
 // ✅ phone validation
 const isValidPhone = (str) =>
@@ -99,12 +100,6 @@ function Order() {
   );
 }
 
-export default Order;
-
-//////////////////////////////////////////////////////
-// 🔥 ACTION (CONNECTED TO THIS PAGE)
-//////////////////////////////////////////////////////
-
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
@@ -112,20 +107,55 @@ export async function action({ request }) {
   const order = {
     ...data,
     cart: JSON.parse(data.cart),
-    id: crypto.randomUUID(), // 🔥 unique ID
+    id: crypto.randomUUID(),
     createdAt: new Date().toISOString(),
   };
 
   console.log("ORDER:", order);
 
+  // ✅ validation
   const errors = {};
   if (!isValidPhone(order.phone)) errors.phone = "Enter a valid phone number";
 
   if (Object.keys(errors).length > 0) return errors;
 
-  // ✅ clear cart
+  //////////////////////////////////////////////////////
+  // 🔥 FORMAT CART FOR EMAIL
+  //////////////////////////////////////////////////////
+  const cartDetails = order.cart
+    .map((item) => `${item.name} x${item.quantity} - $${item.totalPrice}`)
+    .join("\n");
+
+  //////////////////////////////////////////////////////
+  // 🔥 SEND EMAIL USING EMAILJS
+  //////////////////////////////////////////////////////
+  try {
+    await emailjs.send(
+      "service_c488sef", // replace
+      "template_qjev6s5", // replace
+      {
+        customer_name: order.customer,
+        phone: order.phone,
+        address: order.address,
+        order_details: cartDetails,
+      },
+      "H1V61KZDvPimIWPtU", // replace
+    );
+
+    console.log("✅ Email sent successfully");
+  } catch (error) {
+    console.error("❌ Email failed:", error);
+  }
+
+  //////////////////////////////////////////////////////
+  // 🔥 CLEAR CART
+  //////////////////////////////////////////////////////
   store.dispatch(clearCart());
 
-  // ✅ redirect to success page
-  return redirect(`/order/success/${order.id}`);
+  //////////////////////////////////////////////////////
+  // 🔥 REDIRECT
+  //////////////////////////////////////////////////////
+  //return redirect(`/order/success/${order.id}`);
+  return redirect(`/order/success/${order.id}?status=success`);
 }
+export default Order;
