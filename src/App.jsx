@@ -7,7 +7,8 @@ import Order from "./features/order/Order";
 import Login from "./features/Users/Login";
 import Cart from "./features/cart/Cart";
 import { ScrollContextComponent } from "./context/ScrollContext";
-
+import { action as createOrderAction } from "./features/order/Order";
+import OrderSuccess from "./features/order/OrderSuccess";
 function App() {
   const router = createBrowserRouter([
     {
@@ -25,6 +26,7 @@ function App() {
         {
           element: <Order />,
           path: "/order",
+          action: createOrderAction,
         },
         {
           element: <Cart />,
@@ -33,6 +35,10 @@ function App() {
         {
           element: <Login />,
           path: "login",
+        },
+        {
+          path: "/order/success/:orderId", // 🔥 success page route
+          element: <OrderSuccess />,
         },
       ],
     },

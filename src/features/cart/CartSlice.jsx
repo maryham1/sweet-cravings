@@ -31,7 +31,10 @@ const CartSlice = createSlice({
         item.totalPrice = item.quantity * item.price;
       }
     },
-    clearCart(state, action) {},
+    clearCart(state) {
+      state.cart = [];
+      localStorage.removeItem("cart"); // 🔥 prevents old cart from coming back
+    },
   },
 });
 

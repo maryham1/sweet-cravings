@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import EmptyCart from "./EmptyCart";
 import { getTotalCartPrice, getTotalCartQuantity } from "./CartSlice";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const cart = useSelector((state) => state.cart.cart);
@@ -33,7 +34,7 @@ function Cart() {
         </p>
       </div>
       <button className="bg-amber-900 w-auto text-center py-4 text-xl rounded-full text-white">
-        Confirm Order
+        <Link to="/order">Checkout</Link>
       </button>
     </main>
   );
