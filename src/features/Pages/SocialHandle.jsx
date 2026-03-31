@@ -4,59 +4,50 @@ import { MdEmail } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
 
 function SocialHandle() {
+  const links = [
+    {
+      icon: <FaWhatsapp className="text-green-700" />,
+      text: "09045808495",
+      url: "https://wa.me/2349045808495",
+    },
+    {
+      icon: <HiMiniPhoneArrowDownLeft className="text-blue-600" />,
+      text: "09045808495",
+      url: "tel:+2349045808495",
+    },
+    {
+      icon: <MdEmail className="text-red-800" />,
+      text: "maryham4real@gmail.com",
+      url: "mailto:maryham4real@gmail.com",
+    },
+    {
+      icon: (
+        <FaTiktok className="text-white bg-black p-1 rounded-full text-xl" />
+      ),
+      text: "Mariam | codey_sis",
+      url: "https://www.tiktok.com/@mariamcodey_sis",
+    },
+    {
+      icon: <FaXTwitter className="text-white" />,
+      text: "Mariam | codey_sis",
+      url: "https://x.com/Codey_sis",
+    },
+  ];
+
   return (
-    <div className="flex flex-col gap-2 font-poppins">
-      <div className="flex gap-2 items-center">
-        <FaWhatsapp
-          href="https://wa.me/2349045808495"
-          className="text-green-700"
-        />
-        <p
-          href="https://wa.me/2349045808495"
-          className="text-white cursor-pointer"
+    <div className="flex flex-col gap-3 font-poppins">
+      {links.map((item, index) => (
+        <a
+          key={index}
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex gap-2 items-center text-white hover:opacity-80 transition"
         >
-          09045808495
-        </p>
-      </div>
-      <div className="flex gap-2 items-center">
-        <HiMiniPhoneArrowDownLeft
-          href="tel:+2349045808495"
-          className="text-blue-600"
-        />
-        <p href="tel:+2349045808495" className="text-white cursor-pointer">
-          09045808495
-        </p>
-      </div>
-      <div className="flex gap-2 items-center">
-        <MdEmail
-          href="mailto:maryham4real@gmail.com"
-          className="text-red-800"
-        />
-        <p
-          href="mailto:maryham4real@gmail.com"
-          className="text-white cursor-pointer"
-        >
-          maryham4real@gmail.com
-        </p>
-      </div>
-      <div className="flex gap-2 items-center">
-        <FaTiktok
-          href="https://www.tiktok.com/@mariamcodey_sis"
-          className="text-white bg-black p-1 rounded-full text-xl cursor-pointer"
-        />
-        <p
-          href="https://www.tiktok.com/@mariamcodey_sis"
-          className="text-white cursor-pointer"
-        >
-          Mariam|codey_sis
-        </p>
-      </div>
-      <div className="flex gap-2 items-center">
-        <FaXTwitter href="https://x.com/Codey_sis" />
-        <p href="https://x.com/Codey_sis" className="text-white cursor-pointer">
-          Mariam|codey_sis
-        </p>
-      </div>
+          {item.icon}
+          <span className="cursor-pointer">{item.text}</span>
+        </a>
+      ))}
     </div>
   );
 }
