@@ -6,8 +6,8 @@ import Testimonial from "../features/Pages/Testimonial";
 import Contact from "../features/Pages/Contact";
 function Home() {
   return (
-    <div className=" flex flex-col justify-between">
-      <main className="">
+    <div className="min-h-screen flex flex-col justify-between">
+      <main className="flex-1 ">
         <PageNav />
         <section className="relative w-full h-[300px] overflow-hidden">
           <video
