@@ -12,7 +12,7 @@ function Contact() {
     <footer
       id="contact"
       ref={contactRef}
-      className="bg-amber-950   w-full  px-[35px] laptop:px-[150px] py-[20px] flex flex-col gap-10 items-start  tablet:flex-row tablet:justify-between  tablet:py-[20px] laptop:flex-row laptop:justify-between laptop:gap-0 "
+      className="bg-amber-950 mt-10  w-full  px-[35px] laptop:px-[150px] py-[20px] flex flex-col gap-10 items-start  tablet:flex-row tablet:justify-between  tablet:py-[20px] laptop:flex-row laptop:justify-between laptop:gap-0 "
     >
       <LogoWhite />
 
