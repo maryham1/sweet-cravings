@@ -6,8 +6,8 @@ import Testimonial from "../features/Pages/Testimonial";
 import Contact from "../features/Pages/Contact";
 function Home() {
   return (
-    <>
-      <main>
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-1">
         <PageNav />
         <section className="relative w-full h-[300px] overflow-hidden">
           <video
@@ -37,7 +37,7 @@ function Home() {
         <Testimonial />
       </main>
       <Contact />
-    </>
+    </div>
   );
 }
 
