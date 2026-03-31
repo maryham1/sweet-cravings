@@ -10,10 +10,10 @@ function About() {
       ref={aboutRef}
       className="px-[35px] laptop:px-[150px] py-[20px]  bg-red-50/50 scroll-mt-20 laptop:scroll-mt-20 "
     >
-      <div className="flex flex-col gap-10 justify-between m-auto laptop:flex-row laptop:items-center laptop:gap-0">
+      <div className="flex flex-col gap-10 justify-between m-auto tablet:flex-row laptop:flex-row laptop:items-center laptop:gap-0">
         <img
           src="\video\chef.jpeg"
-          className={`${show ? "w-auto h-auto laptop:h-[550px] laptop:w-[320px]" : "h-auto w-auto laptop:w-[200px] laptop:h-[300px]"}   border border-white border-8 order-2 laptop:order-1`}
+          className={`${show ? "w-auto h-auto tablet:h-auto tablet:w-[350px] laptop:h-[550px] laptop:w-[320px]" : "h-auto w-auto tablet:w-[350px] tablet:h-auto laptop:w-[200px]  laptop:h-[300px]"}   border border-white border-8 order-2 tablet:order-1 laptop:order-1`}
         />
 
         <div

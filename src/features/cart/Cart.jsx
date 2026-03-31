@@ -11,8 +11,8 @@ function Cart() {
   if (!cart.length) return <EmptyCart />;
   console.log(cart);
   return (
-    <main className="bg-pink-50 py-10 px-10 h-screen flex flex-col justify-between  ">
-      <h1 className="text-xl laptop:text-5xl">
+    <main className="bg-pink-50 py-10 px-10 h-screen flex flex-col justify-between font-poppins ">
+      <h1 className="text-xl laptop:text-5xl tablet:text-3xl">
         You have {totalQuantity} items in your cart
       </h1>
       <ul className="divide-y divide-stone-200 ">
@@ -27,7 +27,7 @@ function Cart() {
 
         <p className="text-amber-900 text-lg">${totalPrice}</p>
       </div>
-      <div className="bg-white w-auto  flex items-center justify-center gap-2 py-4 px-6   rounded-xl laptop:px-0 laptop:gap-10">
+      <div className="bg-white w-auto  flex items-center justify-center gap-2 py-4 px-6   rounded-xl tablet:px-0 tablet:gap-10 laptop:px-0 laptop:gap-10">
         <img src="\video\icon-carbon-neutral.svg" />
         <p className="text-amber-950">
           This is a <b>carbon neutral</b> delivery

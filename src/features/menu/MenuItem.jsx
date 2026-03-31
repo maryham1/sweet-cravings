@@ -28,13 +28,13 @@ function MenuItem({ item }) {
         <img
           src={image.png}
           alt={name}
-          className="w-[250px] h-[200px] laptop:w-[300px] laptop:h-[250px] rounded-2xl"
+          className="w-[250px] h-[200px] tablet:w-[300px] tablet:h-[250px] laptop:w-[300px] laptop:h-[250px] rounded-2xl"
         />
 
         {isInCart && <UpdateItem currentQuantity={currentQuantity} id={id} />}
         {!isInCart && (
           <button
-            className=" flex items-center justify-center gap-1 border border-gray-400 p-1 text-center w-[140px] absolute -bottom-3 rounded-full bg-white hover:border hover:border-red-800"
+            className=" flex items-center justify-center gap-1 border border-gray-400 p-1 text-center w-[140px] absolute -bottom-3 rounded-full bg-white hover:border hover:border-red-800 font-poppins"
             onClick={handleAddItem}
           >
             <HiOutlineShoppingCart className="text-red-500 text-lg" />
@@ -45,11 +45,11 @@ function MenuItem({ item }) {
       </div>
 
       <div>
-        <p className="text-amber-950/50">{category}</p>
-        <p className="text-black">
+        <p className="text-amber-950/50 font-poppins">{category}</p>
+        <p className="text-black font-poppins">
           <b>{name}</b>
         </p>
-        <p className="text-red-800 ">${price}</p>
+        <p className="text-red-800 font-poppins">${price}</p>
       </div>
     </li>
   );

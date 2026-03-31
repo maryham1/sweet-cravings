@@ -24,8 +24,8 @@ function Order() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="max-w-[320px] mx-auto p-6 bg-white rounded-xl shadow shadow-xl mt-10 font-poppins laptop:max-w-md">
-      <h2 className="text-lg font-semibold mb-6 text-pink-600 font-poppins laptop:text-2xl">
+    <div className="max-w-[320px] mx-auto p-6 bg-white rounded-xl shadow shadow-xl mt-10 font-poppins tablet:max-w-md laptop:max-w-md">
+      <h2 className="text-lg font-semibold mb-6 text-pink-600 font-poppins tablet:text-xl laptop:text-2xl">
         Checkout
       </h2>
 

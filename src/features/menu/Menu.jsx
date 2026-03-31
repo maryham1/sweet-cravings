@@ -22,7 +22,7 @@ function Menu() {
         <CreateUser />
         <button className="relative bg-red-800 rounded-full text-center flex gap-2 w-[170px] laptop:w-[170px] p-2 items-center justify-center">
           <HiOutlineShoppingCart className="text-red-400 text-lg" />
-          <Link to="/cart" className="text-white">
+          <Link to="/cart" className="text-white font-poppins">
             Go to cart
           </Link>
           {cart.length === 0 || totalQuantity === 0 ? (
@@ -30,14 +30,14 @@ function Menu() {
           ) : (
             <div className="absolute -top-3 right-3">
               <HiBell className="text-2xl text-red-500" />
-              <p className="bg-amber-800  text-center text-[9px] text-white rounded-full w-[12px] h-[12px]  absolute -top-1 right-0">
+              <p className="bg-amber-800  text-center text-[9px] text-white rounded-full w-[12px] h-[12px]  absolute -top-1 right-0 font-poppins">
                 {totalQuantity}
               </p>
             </div>
           )}
         </button>
       </div>
-      <ul className="flex flex-col  flex-nowrap  gap-[30px] items-center laptop:flex-row  laptop:flex-wrap laptop:justify-between laptop:gap-[20px]">
+      <ul className="flex flex-col  flex-nowrap  gap-[30px] items-center tablet:flex-row tablet:flex-wrap tablet:justify-between tablet:gap-[20px] laptop:flex-row  laptop:flex-wrap laptop:justify-between laptop:gap-[20px]">
         {menu.map((item) => (
           <MenuItem item={item} key={item.name} />
         ))}

@@ -26,7 +26,7 @@ function Home() {
           </h1>
           <p>Every bite is a little celebration of sweetness</p>
           <button className="bg-red-100 rounded-lg px-4 py-2.5 text-center w-[150px]">
-            <Link to="/login" className="text-amber-950 font-poppins">
+            <Link to="/menu" className="text-amber-950 font-poppins">
               Explore menu
             </Link>
           </button>
