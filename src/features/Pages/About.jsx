@@ -23,7 +23,7 @@ function About() {
             our story
           </h2>
 
-          <p className="text-amber-950 text-lg">
+          <p className="text-amber-950 text-lg laptop:text-lg">
             At Sweet Cravings, we believe Dessert should be more than food -they
             should be an unforgettable experience. Every bite is designed to
             bring comfort, joy, and a little moment of indulgence. From rich
