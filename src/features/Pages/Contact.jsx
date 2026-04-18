@@ -3,8 +3,9 @@ import Logo from "../../ui/Logo";
 import LogoWhite from "../../ui/LogoWhite";
 import PageLink from "./PageLink";
 import PageLinkWhite from "./PageLinkWhite";
-import SocialHandle from "./SocialHandle";
+
 import { useComponent } from "../../context/ScrollContext";
+import SocialHandle from "./SocialHandle";
 
 function Contact() {
   const { contactRef } = useComponent();
